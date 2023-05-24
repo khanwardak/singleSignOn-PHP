@@ -1,0 +1,25 @@
+.login{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card {
+  width: 300px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.card-body {
+padding: 16px;
+}
+.card-title h3, p {
+  padding-top: 15px;
+  text-align: center;
+}
+.card-body a, i {
+  align-items: center;
+  text-decoration: none;
+  padding-top: 15px;
+  text-align: center;
+}
