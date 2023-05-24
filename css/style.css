@@ -17,9 +17,17 @@ padding: 16px;
   padding-top: 15px;
   text-align: center;
 }
-.card-body a, i {
+.card-body a{
+  margin-left:50%;transform:translate(-50%);
+  display: flex;
   align-items: center;
-  text-decoration: none;
-  padding-top: 15px;
-  text-align: center;
+  justify-content: center;
+  margin-right:10px
+}
+.card-footer a{
+  padding: 10px;
+
+}
+.card-footer a:hover{
+  color: #a5a5fA;
 }

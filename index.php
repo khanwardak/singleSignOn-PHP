@@ -19,19 +19,22 @@
   <body>
     <div class="container-fluid">
       <div class="login">
-        <div class="card">
+        <div class="card d-flex justify-content-center">
           <div class="card-title">
             <h3>Welcome to SSO App</h3>
           </div>
           <div class="card-body d-flex justify-content-center">
-            <div class="d-flex justify-content-center">
-              <a href="#" class="btn btn-dark" style="margin-top:10px">Login With
-                <i class="fa fa-github fa-3x" style="margin-top:10px"></i>
+
+              <a href="#" class="btn btn-success">Login With
+                <i class="fa fa-github fa-3x" style="padding:5px"></i>
               </a>
-            </div>
+
+          </div>
+          <div class="card-footer">
+            <a href="#">Do not have acount?</a>
           </div>
         </div>
       </div>
     </div>
   </body>
-</html
+</html>
