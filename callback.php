@@ -7,9 +7,9 @@ use League\OAuth2\Client\Provider\Github;
 
 $config = [
     'github' => [
-        'clientId' => 'b6d7aeefdbf0ebebdd25',
-        'clientSecret' => '57d7f6d652942dbdab22cb3591397d3b7c7621b2',
-        'redirectUri' => 'http://localhost/sso-php/callback.php',
+        'clientId' => '9ff977384313490414d7',
+        'clientSecret' => '923ec3ffad14dfb5fee4aa4de635d40daeabf96a',
+        'redirectUri' => 'http://localhost/ssoPHP/callback.php',
     ],
 ];
 

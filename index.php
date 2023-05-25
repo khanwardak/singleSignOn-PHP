@@ -1,3 +1,46 @@
+<?php
+session_start();
+
+// Include the GitHub OAuth library
+require 'vendor/autoload.php';
+
+use League\OAuth2\Client\Provider\Github;
+
+// Configuration settings
+$config = [
+    'github' => [
+        'clientId'     => '9ff977384313490414d7',
+        'clientSecret' => '923ec3ffad14dfb5fee4aa4de635d40daeabf96a',
+        'redirectUri'  => 'http://localhost/ssoPHP/callback.php',
+    ],
+];
+
+$provider = new Github($config['github']);
+
+// Check if the user is already authenticated
+if (isset($_SESSION['access_token'])) {
+    // User is authenticated, redirect to protected page
+    header('Location: dashborad.php');
+    exit;
+}
+
+// Check if the user clicked the login button
+if (isset($_GET['login'])) {
+    // Generate the authorization URL with a unique state parameter
+    $authorizationUrl = $provider->getAuthorizationUrl([
+      'scope' => ['user', 'user:email'], // Add 'user:email' to the scope
+          'state' => bin2hex(random_bytes(16)) // Generate a random state value
+    ]);
+
+    // Store the state in the session for security validation
+    $_SESSION['oauth2state'] = $provider->getState();
+
+    // Redirect to GitHub login page
+    header("Location: {$authorizationUrl}");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -25,13 +68,13 @@
           </div>
           <div class="card-body d-flex justify-content-center">
 
-              <a href="#" class="btn btn-success">Login With
+              <a href="?login" class="btn btn-success">Login With
                 <i class="fa fa-github fa-3x" style="padding:5px"></i>
               </a>
 
           </div>
           <div class="card-footer">
-            <a href="#">Do not have acount?</a>
+            <a href="?login">Do not have acount?</a>
           </div>
         </div>
       </div>
