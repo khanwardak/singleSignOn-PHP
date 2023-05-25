@@ -1,12 +1,12 @@
 <?php
 session_start();
 
-// Check if the user is authenticated
-// if (!isset($_SESSION['access_token'])) {
-//     // User is not authenticated, redirect to the login page
-//     header('Location: index.php');
-//     exit;
-// }
+Check if the user is authenticated
+if (!isset($_SESSION['access_token'])) {
+    // User is not authenticated, redirect to the login page
+    header('Location: index.php');
+    exit;
+}
 
 // Retrieve the authorization code from the query parameters
 $code = $_GET['code'];
